@@ -5,7 +5,17 @@
 3. Extract the zip file
 
 ## Usage:
-1. Use the menu in the macro to select which items to buy, and press start
-2. Press F3 (or another keybind if you changed it) to stop the macro.
+1. Run Macro.ahk
+2. Use the menu in the macro to select which items to buy, and press start
+3. Press F3 (or another keybind if you changed it) to stop the macro.
+
+## Features:
+ - Seed Shop
+ - Gear Shop
+ - Auto Harvest
+ - Auto Sell
+ - Botanist Donations
+ - Auto Reconnect
+ - Auto Update
 
 Click here for a [YouTube Tutorial!](https://youtube.com/ScriptAndPlayGames)
