@@ -1,4 +1,3 @@
-Version Release1.01
-
+Version Release1.02
 Bug Fixes:
- - Fixed Auto Harvest not reconnecting
+ - Fixed Auto Harvest not realigning

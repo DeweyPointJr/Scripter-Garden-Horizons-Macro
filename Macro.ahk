@@ -658,7 +658,7 @@ CloseRobuxPrompt() {
 }
 
 CheckForUpdate() {
-    currentVersion := "Release1.01" ; <-- Set your current version here
+    currentVersion := "Release1.02" ; <-- Set your current version here
     latestURL := "https://api.github.com/repos/DeweyPointJr/Scripter-Garden-Horizons-Macro/releases/latest"
 
     whr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
@@ -1435,6 +1435,12 @@ AutoHarvestLabel:
     Walk("w", 1000)
 
     Walk("e", 5000)
+
+    Sleep, 1000
+
+    Tooltip, Middle Complete. Realigning Camera.
+    Sleep, 1000
+    Gosub, AutoAlignCameraLabel
 
 Return
 
