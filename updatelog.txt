@@ -1,12 +1,4 @@
-Version Release1.0
+Version Release1.01
 
-FEATURES:
- - Seed Shop
- - Gear Shop
- - Auto Harvest
- - Botanist Donations
- - Auto Sell
- - Auto Reconnect
- - Auto Update
-
-Thanks for downloading!
+Bug Fixes:
+ - Fixed Auto Harvest not reconnecting

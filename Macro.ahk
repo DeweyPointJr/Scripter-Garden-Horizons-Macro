@@ -610,13 +610,11 @@ BuyFromShop(shopName) {
 
         ; Only buy if item is selected
         if selectedNameMap.HasKey(item) {
-            ToolTip, Buying %item%
 
             Sleep, 100
             buyX := 0
             buyY := 0
             if (FindPixelRelative(0x72FF90, 698, 343, 1244, 910, buyX, buyY, 10)) {
-                Tooltip, Buy Button found at %buyX% %buyY%
                 if (PixelColorFound(0xFFB571, (buyX+68), (buyY-209), (buyX+407), (buyY-56), 10)) {
                     Tooltip, %item% In Stock
                     UINavigation("EEEEEEEEEEEEEEEEEEEEEEEEEEE", 1, 0)
@@ -660,7 +658,7 @@ CloseRobuxPrompt() {
 }
 
 CheckForUpdate() {
-    currentVersion := "Release1.0" ; <-- Set your current version here
+    currentVersion := "Release1.01" ; <-- Set your current version here
     latestURL := "https://api.github.com/repos/DeweyPointJr/Scripter-Garden-Horizons-Macro/releases/latest"
 
     whr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
@@ -1305,8 +1303,7 @@ AutoHarvestLabel:
     Tooltip, Auto Harvesting. Reconnecting to Reset Camera...
     Sleep, 2000
 
-    ;ReconnectToGame()
-    Gosub, ResetCharacter
+    ReconnectToGame()
 
     ; Set camera to top-down view
     ClickRelative(0.5, .4)
