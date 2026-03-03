@@ -289,7 +289,7 @@ ReconnectToGame() {
                 WinMaximize, Roblox
                 Tooltip, Roblox opened successfully. Loading game...
                 WinGet, RobloxWindow, ID, ahk_exe RobloxPlayerBeta.exe
-                Sleep, 15000  ; Wait for game to load
+                Sleep, 22500  ; Wait for game to load
                 ; Check for connection failed
                 imagePath := A_ScriptDir . "\Images\ConnectionFailed.png"
                 ImageSearch, FoundX, FoundY, (((X+702)/1936)*W), (((Y+361)/1056)*H), (((X+1224)/1936)*W), (((Y+718)/1056)*H), *80 %imagePath%
@@ -658,7 +658,7 @@ CloseRobuxPrompt() {
 }
 
 CheckForUpdate() {
-    currentVersion := "Release1.02" ; <-- Set your current version here
+    currentVersion := "Release1.03" ; <-- Set your current version here
     latestURL := "https://api.github.com/repos/DeweyPointJr/Scripter-Garden-Horizons-Macro/releases/latest"
 
     whr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
@@ -763,8 +763,6 @@ MainLoop:
             CheckRobloxStatusFunc()
         }
 
-        ; Start the harvest timer
-        SetTimer, AutoHarvestTimer, % (AutoHarvest ? HarvestTime * 60000 : "Off")
 
         ; Make sure camera is aligned correctly
         Gosub, AutoAlignCameraLabel
@@ -973,6 +971,9 @@ StartHotkeyLabel() {
         MsgBox, Warning: Auto Harvest is enabled without Auto Reconnect. The macro needs to know which plot you are in to be able to harvest. Please enable Auto Reconnect.
         Reload
     }
+    ; Start the auto harvest label
+    SetTimer, AutoHarvestTimer, % (AutoHarvest ? HarvestTime * 60000 : "Off")
+
     Gosub, MainLoop
 }
 
@@ -1301,6 +1302,11 @@ Return
 
 AutoHarvestLabel:
     Tooltip, Auto Harvesting. Reconnecting to Reset Camera...
+
+    ; Restart timer
+    HarvestNow := false
+    SetTimer, AutoHarvestTimer, % (AutoHarvest ? HarvestTime * 60000 : "Off")
+
     Sleep, 2000
 
     ReconnectToGame()

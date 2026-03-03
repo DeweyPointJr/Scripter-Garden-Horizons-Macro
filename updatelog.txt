@@ -1,3 +1,4 @@
-Version Release1.02
+Version Release1.03
+
 Bug Fixes:
- - Fixed Auto Harvest not realigning
+ - Fixed a bug where Auto Harvest wasn't triggering as it's supposed to
